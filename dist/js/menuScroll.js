@@ -1,20 +1,9 @@
 
-// function section1() {
-    //   const element = document.getElementById("section1");
-    //   element.scrollIntoView({behavior: 'smooth' });
-    // }
-    
-    // 
-   
-    function section2() {
-    const mobileMenu = document.querySelector("nav div");
-    mobileMenu.classList.remove("menuMobileActive");
 
+    function section2() {
     const element = document.getElementById("section2");
     element.scrollIntoView({behavior: 'smooth' });
 
-    const burger = document.querySelector(".burger");
-    burger.classList.remove("activeRot");
     };
 
     function section3() {

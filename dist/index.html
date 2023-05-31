@@ -4,16 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>blog Tailwind</title>
+    <title>page by Tailwindcss</title>
+
     <script src="https://kit.fontawesome.com/359f743a12.js" crossorigin="anonymous"></script>
     
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500&display=swap" rel="stylesheet">
+    <link type="image/png" sizes="16x16" rel="icon" href="images/favi-coderwall.png">
+    <!-- <a target="_blank" href="https://icons8.com/icon/13678/coderwall">Coderwall</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@600&display=swap" rel="stylesheet">
+    
 
     <link rel="stylesheet" href="output.css">
-
     <style>
+        #menu-toggle:checked + #menu {
+        display: block;
+      }
     </style>
     
 </head>
@@ -21,91 +27,146 @@
 
 <body class="bg-zinc-200 font-display">
 
-        <!-- HEADER -->
-        <section class="header">
-
-            
-            <a href="#" class="to-top"><i class="fas fa-arrow-circle-up"></i></a>
-
-            <div class="bgHeader">
-                <div class=""><a class="inline-block" href="index.html"><img src="images/logo_web.webp" width="75" height="55"></a></div>            
-                <div class="burger">+</div>
-            </div>
-
-        </section>
-        
-        <nav>
+        <!-- BUTTON TO TOP -->
             <div>
-                <button class="itemMenu item_menuMobile btn-fases active">START</button>
-                <button onclick="section2()" class="itemMenu item_menuMobile btn-fases">BLOG</button>
-                <button onclick="section3()" class="itemMenu item_menuMobile btn-fases">KOMENTARZE</button>
-                <button onclick="section4()" class="itemMenu item_menuMobile btn-fases">NEWSLETTER</button>
-                <button onclick="section5()" class="itemMenu item_menuMobile btn-fases">KONTAKT</button>
+                <a href="#" class="to-top"><i class="fas fa-arrow-circle-up"></i></a>
+
             </div>
-        </nav>
+
+        <!-- NAVBAR -->
+        <div class="antialiased py-2">
+            <header class="bg-gradient-to-r from-gray-200 to-gray-400">
+                    <div class="container px-4 flex justify-between items-center flex-wrap ">
+                        <div>
+                            <a href="#"><img src="images/logo_web.webp" alt="logo" class="w-14 h-14"></a>
+                        </div>
+                    
+                        <label for="menu-toggle" class="pointer-cursor block md:hidden "><img src="images/burger.svg" alt="burger" class="w-8 h-8"></label>
+                        <input class="hidden" type="checkbox" id="menu-toggle" />
+                    
+                        <div class="w-full hidden md:flex md:items-center md:w-auto" id="menu">
+                            <nav>
+                            <ul class="w-40 md:w-auto uppercase md:flex items-center justify-between text-base text-white">
+                                <li><a class="active mt-3 px-2 py-1 md:mt-0 md:mx-2 block bg-menu-blue hover:bg-item-hover item_Menu" href="#">start</a></li>
+                                <li onclick="section2()"><a class="mt-3 px-2 py-1 md:mt-0 md:mx-2 block bg-menu-blue hover:bg-item-hover item_Menu" href="#section2">blog</a></li>
+                                <li onclick="section3()"><a class="mt-3 px-2 py-1 md:mt-0 md:mx-2 block bg-menu-blue hover:bg-item-hover item_Menu" href="#section3">komentarze</a></li>
+                                <li onclick="section4()"><a class="mt-3 px-2 py-1 md:mt-0 md:mx-2 block bg-menu-blue hover:bg-item-hover item_Menu" href="#section4">newsletter</a></li>
+                                <li onclick="section5()"><a class="mt-3 px-2 py-1 md:mt-0 md:mx-2 block bg-menu-blue hover:bg-item-hover item_Menu" href="#section5">kontakt</a></li>
+                            </ul>
+                            </nav>
+                        </div>    
+                    </div>
+            </header>
+        </div>
 
         <!-- HERO -->
-        <section class="anchor relative">
-            <div>
+        <section class="relative">
+            <div class="relative">
                 <div style="position: absolute; top:0; left:0; width:100%; height:100%; background-color: rgba(0,0,0,0.3); z-index: 11;"></div>
                 
-                <img src="images/tlo.jpg" alt="hero_img" class="banner">
+                <img src="images/tlo.jpg" alt="hero_img" class="banner" style="width: 100%;">
             
-                <div class="font-display text-white flex flex-col z-20 slideTop" style="position:absolute; top:25%; left:20%;">
-                    <h1 class="text-xl sm:text-2xl md:text-4xl xl:text-7xl 2xl:text-8xl font-extrabold">Kodowanie stron WWW</h1>
+                <div class="font-display text-white flex flex-col z-20 slideTop" style="position: absolute; top: 20%; left: 20%;">
+                    <h1 class="font-extrabold text-2xl sm:text-4xl md:text-5xl xl:text-7xl 2xl:text-8xl">Kodowanie stron WWW</h1>
                     <h2 class="text-base md:text-2xl 2xl:text-4xl font-extrabold md:mt-6">Jest... naszą pasją</h2>
-                    <a href="#" class="text-sm md:text-base bg-orange-600 hover:bg-gradient-to-r from-orange-600 to-orange-300 w-36 mt-10 xl:mt-20 py-1 md:w-40 md:my-10 border-solid border-2 border-white flex justify-center">CZYTAJ WIĘCEJ</a>
+                    <a href="#" class="text-center bg-orange-600 hover:bg-gradient-to-r from-orange-600 to-orange-300 w-36 md:w-40 mt-10 xl:mt-20 py-1 xl:py-2 md:my-10 border-solid border-2 border-white btnText">CZYTAJ WIĘCEJ</a>
                 </div>
             </div>
         </section>
     
         <!-- BLOG -->
-        <section data-section="me" id="section2" class="section_2 anchor">
+        <section data-section="me" id="section2">
             <div>
-                <p class="text-center text-lg font-semibold py-5 md:py-8 uppercase">blog</p>
+                <p class="text-center text-xl font-semibold py-5 md:py-8 uppercase">blog</p>
             </div>
             <div class="container">
                 <div class="w-12/12 flex flex-wrap">
-                    <div class="w-full lg:w-8/12">
+                    <div class="w-full lg:w-9/12">
                             <div class="bg-white">
                                 <div class="">
                                     <div class="post-thumbnail p-4 relative">
                                         <a href="">
-                                            <img src="images/road.jpg" class="w-full">
+                                            <img src="images/road.jpg" class="w-96 md:w-full">
                                         </a>
                                         <div class="post-th-link absolute top-10 left-10">
                                             <a class="bg-orange-600 py-1 px-1 text-white" href="">Link przycisk 1</a>
                                             <a class="bg-orange-600 py-1 px-1 text-white hidden md:inline" href="">Link przycisk 2</a>
                                         </div>
                                     </div>
-
-                                    <div class="entry-meta pl-6">
-                                        <span class="post-author">
-                                            —&nbsp;&nbsp;By <a href="">admin</a> <i class="fas fa-circle fa-my-class text-gray-600" style="font-size: 10px;"></i>
-                                        </span>
-                                        <span class="post-date">31.02.2021 <i class="fas fa-circle fa-my-class text-gray-600" style="font-size: 10px;"></i> </span>
-                                        <span class="post-comments"><a href="">1 comment</a></span>
-                                    </div>
-
-                                    <div class="pl-6">
-                                        <h2 class="italic text-orange-600 text-lg md:text-2xl">
-                                            <a href="">Cabo Polonio: Uruguay’s Village of Miracles</a>
-                                        </h2>
-                                    </div>
-
-                                    <div class="text-gray-400 px-6 py-2 md:pl-6 md:pr-0">
-                                        <p class="w-11/12">To miejsce, gdzie kiedyś tętniło życiem i istniał dawny szlak Sophienhof, zwany też Zofiówką. Nazwał go tak dawny właściciel na cześć swojej matki. Dziś rosną tam stare klony i kasztanowce, a spacerując tam wrześniowym rankiem możemy zachwycać się także jesiennymi pajęczynkami</p>
-                                    </div>
-
-                                    <div class="mt-2 flex flex-col md:flex-row justify-between">
-                                        <div class="pl-6 mb-4 md:mb-0">
-                                            <a class="border-solid border-2 border-orange-600 px-3 py-1 uppercase hover:bg-gray-100" href="">Read more</a>
+                                    <div class="pl-4">
+                                        <div class="entry-meta">
+                                            <span class="post-author">
+                                                —&nbsp;&nbsp;By <a href="">admin</a> <i class="fas fa-circle fa-my-class text-gray-600" style="font-size: 10px;"></i>
+                                            </span>
+                                            <span class="post-date">31.02.2021 <i class="fas fa-circle fa-my-class text-gray-600" style="font-size: 10px;"></i> </span>
+                                            <span class="post-comments"><a href="">1 comment</a></span>
                                         </div>
-                                        <div class="pb-6 px-6 text-gray-400">
-                                            <a href=""><i class="pr-3 fab fa-facebook-f"></i></a>
-                                            <a href=""><i class="pr-3 fab fa-twitter"></i></a>
-                                            <a href=""><i class="pr-3 fab fa-google-plus-g"></i></a>
-                                            <a href=""><i class="pr-3 fab fa-linkedin-in"></i></a>                                    
+
+                                        <div class="">
+                                            <h2 class="italic text-orange-600 text-lg md:text-2xl">
+                                                <a href="">Cabo Polonio: Uruguay’s Village of Miracles</a>
+                                            </h2>
+                                        </div>
+
+                                        <div class="text-gray-600 py-2">
+                                            <p class="w-11/12">To miejsce, gdzie kiedyś tętniło życiem i istniał dawny szlak Sophienhof, zwany też Zofiówką. Nazwał go tak dawny właściciel na cześć swojej matki. Dziś rosną tam stare klony i kasztanowce, a spacerując tam wrześniowym rankiem możemy zachwycać się także jesiennymi pajęczynkami</p>
+                                        </div>
+
+                                        <div class="mt-2 flex flex-col md:flex-row justify-between">
+                                            <div class="mb-4 md:mb-0">
+                                                <a class="border-solid border-2 border-orange-600 px-3 py-1 uppercase hover:bg-gray-100" href="">Read more</a>
+                                            </div>
+                                            <div class="pb-6 text-gray-400">
+                                                <a href=""><i class="pr-3 fab fa-facebook-f"></i></a>
+                                                <a href=""><i class="pr-3 fab fa-twitter"></i></a>
+                                                <a href=""><i class="pr-3 fab fa-google-plus-g"></i></a>
+                                                <a href=""><i class="pr-3 fab fa-linkedin-in"></i></a>                                    
+                                            </div>
+                                        </div>
+                                    </div>   
+                                </div>                        
+                            </div>
+                            <div class="w-full" style="height: 24px;"></div>
+                            <div class="bg-white">
+                                <div class="">
+                                    <div class="post-thumbnail p-4 relative">
+                                        <a href="">
+                                            <img src="images/river.jpg" class="w-96 md:w-full">
+                                        </a>
+                                        <div class="post-th-link absolute top-10 left-10">
+                                            <a class="bg-orange-600 py-1 px-1 text-white" href="">Link przycisk 1</a>
+                                            <a class="bg-orange-600 py-1 px-1 text-white hidden md:inline" href="">Link przycisk 2</a>
+                                        </div>
+                                    </div>
+                                    <div class="pl-4">
+                                        <div class="entry-meta">
+                                            <span class="post-author">
+                                                —&nbsp;&nbsp;By <a href="">admin</a> <i class="fas fa-circle fa-my-class text-gray-600" style="font-size: 10px;"></i>
+                                            </span>
+                                            <span class="post-date">31.02.2021 <i class="fas fa-circle fa-my-class text-gray-600" style="font-size: 10px;"></i> </span>
+                                            <span class="post-comments"><a href="">1 comment</a></span>
+                                        </div>
+
+                                        <div class="">
+                                            <h2 class="italic text-orange-600 text-lg md:text-2xl">
+                                                <a href="">Cabo Polonio: Uruguay’s Village of Miracles</a>
+                                            </h2>
+                                        </div>
+
+                                        <div class="text-gray-600 py-2">
+                                            <p class="w-11/12">Jezioro było ogromne, spokojne i monumentalne. Przeglądały się w nim dalekie chmury, oraz okalające je drzewa. Wokół jeziora rosły piękne topole. Uważam, że topole w ogóle są uroczymy drzewami, ale te były naprawdę wyjątkowe.</p>
+                                        </div>
+
+                                        <div class="mt-2 flex flex-col md:flex-row justify-between">
+                                            <div class="mb-4 md:mb-0">
+                                                <a class="border-solid border-2 border-orange-600 px-3 py-1 uppercase hover:bg-gray-100" href="">Read more</a>
+                                            </div>
+                                            <div class="pb-6 text-gray-400">
+                                                <a href=""><i class="pr-3 fab fa-facebook-f"></i></a>
+                                                <a href=""><i class="pr-3 fab fa-twitter"></i></a>
+                                                <a href=""><i class="pr-3 fab fa-google-plus-g"></i></a>
+                                                <a href=""><i class="pr-3 fab fa-linkedin-in"></i></a>                                    
+                                            </div>
                                         </div>
                                     </div>
                                 </div>                        
@@ -115,91 +176,48 @@
                                 <div class="">
                                     <div class="post-thumbnail p-4 relative">
                                         <a href="">
-                                            <img src="images/river.jpg" class="w-full">
+                                            <img src="images/mountains.jpg" class="w-96 md:w-full">
                                         </a>
                                         <div class="post-th-link absolute top-10 left-10">
                                             <a class="bg-orange-600 py-1 px-1 text-white" href="">Link przycisk 1</a>
                                             <a class="bg-orange-600 py-1 px-1 text-white hidden md:inline" href="">Link przycisk 2</a>
                                         </div>
                                     </div>
-
-                                    <div class="entry-meta pl-6">
-                                        <span class="post-author">
-                                            —&nbsp;&nbsp;By <a href="">admin</a> <i class="fas fa-circle fa-my-class text-gray-600" style="font-size: 10px;"></i>
-                                        </span>
-                                        <span class="post-date">31.02.2021 <i class="fas fa-circle fa-my-class text-gray-600" style="font-size: 10px;"></i> </span>
-                                        <span class="post-comments"><a href="">1 comment</a></span>
-                                    </div>
-
-                                    <div class="pl-6">
-                                        <h2 class="italic text-orange-600 text-lg md:text-2xl">
-                                            <a href="">Cabo Polonio: Uruguay’s Village of Miracles</a>
-                                        </h2>
-                                    </div>
-
-                                    <div class="text-gray-400 px-6 py-2 md:pl-6 md:pr-0">
-                                        <p class="w-11/12">Jezioro było ogromne, spokojne i monumentalne. Przeglądały się w nim dalekie chmury, oraz okalające je drzewa. Wokół jeziora rosły piękne topole. Uważam, że topole w ogóle są uroczymy drzewami, ale te były naprawdę wyjątkowe.</p>
-                                    </div>
-
-                                    <div class="mt-2 flex flex-col md:flex-row justify-between">
-                                        <div class="pl-6 mb-4 md:mb-0">
-                                            <a class="border-solid border-2 border-orange-600 px-3 py-1 uppercase hover:bg-gray-100" href="">Read more</a>
+                                    <div class="pl-4">
+                                        <div class="entry-meta">
+                                            <span class="post-author">
+                                                —&nbsp;&nbsp;By <a href="">admin</a> <i class="fas fa-circle fa-my-class text-gray-600" style="font-size: 10px;"></i>
+                                            </span>
+                                            <span class="post-date">31.02.2021 <i class="fas fa-circle fa-my-class text-gray-600" style="font-size: 10px;"></i> </span>
+                                            <span class="post-comments"><a href="">1 comment</a></span>
                                         </div>
-                                        <div class="pb-6 px-6 text-gray-400">
-                                            <a href=""><i class="pr-3 fab fa-facebook-f"></i></a>
-                                            <a href=""><i class="pr-3 fab fa-twitter"></i></a>
-                                            <a href=""><i class="pr-3 fab fa-google-plus-g"></i></a>
-                                            <a href=""><i class="pr-3 fab fa-linkedin-in"></i></a>                                    
+
+                                        <div class="">
+                                            <h2 class="italic text-orange-600 text-lg md:text-2xl">
+                                                <a href="">Cabo Polonio: Uruguay’s Village of Miracles</a>
+                                            </h2>
                                         </div>
-                                    </div>
-                                </div>                        
-                            </div>
-                            <div class="w-full" style="height: 24px;"></div>
-                            <div class="bg-white">
-                                <div class="">
-                                    <div class="post-thumbnail p-4 relative">
-                                        <a href="">
-                                            <img src="images/mountains.jpg" class="w-full">
-                                        </a>
-                                        <div class="post-th-link absolute top-10 left-10">
-                                            <a class="bg-orange-600 py-1 px-1 text-white" href="">Link przycisk 1</a>
-                                            <a class="bg-orange-600 py-1 px-1 text-white hidden md:inline" href="">Link przycisk 2</a>
+
+                                        <div class="text-gray-600 py-2">
+                                            <p class="w-11/12">Na zdjęciu został utrwalony krajobraz górski latem. Na pierwszym planie znajduje się łąka z jaskraworóżowymi kwiatami. Nad nią rozpościera się niebo pełne białych, kłębiastych chmur. Ich różne kształty i rozmaite odcienie bieli kontrastują z wyrazistym błękitem nieba.</p>
                                         </div>
-                                    </div>
 
-                                    <div class="entry-meta pl-6">
-                                        <span class="post-author">
-                                            —&nbsp;&nbsp;By <a href="">admin</a> <i class="fas fa-circle fa-my-class text-gray-600" style="font-size: 10px;"></i>
-                                        </span>
-                                        <span class="post-date">31.02.2021 <i class="fas fa-circle fa-my-class text-gray-600" style="font-size: 10px;"></i> </span>
-                                        <span class="post-comments"><a href="">1 comment</a></span>
-                                    </div>
-
-                                    <div class="pl-6">
-                                        <h2 class="italic text-orange-600 text-lg md:text-2xl">
-                                            <a href="">Cabo Polonio: Uruguay’s Village of Miracles</a>
-                                        </h2>
-                                    </div>
-
-                                    <div class="text-gray-400 px-6 py-2 md:pl-6 md:pr-0">
-                                        <p class="w-11/12">Na zdjęciu został utrwalony krajobraz górski latem. Na pierwszym planie znajduje się łąka z jaskraworóżowymi kwiatami. Nad nią rozpościera się niebo pełne białych, kłębiastych chmur. Ich różne kształty i rozmaite odcienie bieli kontrastują z wyrazistym błękitem nieba.</p>
-                                    </div>
-
-                                    <div class="mt-2 flex flex-col md:flex-row justify-between">
-                                        <div class="pl-6 mb-4 md:mb-0">
-                                            <a class="border-solid border-2 border-orange-600 px-3 py-1 uppercase hover:bg-gray-100" href="">Read more</a>
-                                        </div>
-                                        <div class="pb-6 px-6 text-gray-400">
-                                            <a href=""><i class="pr-3 fab fa-facebook-f"></i></a>
-                                            <a href=""><i class="pr-3 fab fa-twitter"></i></a>
-                                            <a href=""><i class="pr-3 fab fa-google-plus-g"></i></a>
-                                            <a href=""><i class="pr-3 fab fa-linkedin-in"></i></a>                                    
+                                        <div class="mt-2 flex flex-col md:flex-row justify-between">
+                                            <div class="mb-4 md:mb-0">
+                                                <a class="border-solid border-2 border-orange-600 px-3 py-1 uppercase hover:bg-gray-100" href="">Read more</a>
+                                            </div>
+                                            <div class="pb-6 text-gray-400">
+                                                <a href=""><i class="pr-3 fab fa-facebook-f"></i></a>
+                                                <a href=""><i class="pr-3 fab fa-twitter"></i></a>
+                                                <a href=""><i class="pr-3 fab fa-google-plus-g"></i></a>
+                                                <a href=""><i class="pr-3 fab fa-linkedin-in"></i></a>                                    
+                                            </div>
                                         </div>
                                     </div>
                                 </div>                        
                             </div>
                     </div>
-                    <div class="w-full lg:w-4/12 lg:pl-6">
+                    <div class="w-full lg:w-3/12 lg:px-4">
                         <div class="bg-orange-600 text-white p-6">
                             <div class=" text-2xl italic text-center">"The world is a book and those who do not travel read only
                                 one page."</div>
@@ -262,17 +280,17 @@
         </section>
 
         <!-- COMMENTS -->
-        <section data-section="portfolio" id="section3" class="anchor section_3">
+        <section data-section="portfolio" id="section3">
             <div class="bg-zinc-200">
-                <p class="text-center text-lg font-semibold py-5 md:py-8 uppercase">komentarze</p>
+                <p class="text-center text-xl font-semibold py-5 md:py-8 uppercase">komentarze</p>
             </div>
             <div class="container bg-zinc-100">
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 py-2 md:py-6 md:px-6">
-                    <div class="bg-gray-200 my-2 xl:my-0 mx-4 sm:mx-0">
-                        <div class="px-1 pt-4 xl:w-96 mx-auto">
-                                <div class="w-10 h-10 mt-2 bg-gray-500 rounded-full flex items-center justify-center font-bold text-white" style="font-size: 10px">LOGO</div>
+                <div class="w-full flex flex-wrap justify-center">
+                    <div class="bg-white my-2 xl:my-0 mx-1 w-96 md:w-fit">
+                        <div class="px-1 pt-4">
+                                <div class="w-8 h-8 mt-2 bg-gray-400 rounded-full flex items-center justify-center font-bold text-white" style="font-size: 8px">LOGO</div>
                                 <div class="mt-1">
-                                <h1 class="text-lg text-gray-700 font-semibold hover:underline cursor-pointer mt-3">Recenzja produktu</h1>
+                                <h2 class="text-lg text-gray-700 font-semibold hover:underline cursor-pointer mt-3">Recenzja produktu</h2>
                                 <div class="flex mt-2">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
                                     <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
@@ -287,11 +305,11 @@
                                     <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                                     </svg>
                                 </div>
-                                <p class="mt-4 text-lg text-gray-600 w-72">Ten blog jest inspirujący w świecie krajobrazów. Jest to tak istotna pozycja w pracy, że chyba na nowo zacznę czytać wszystko jeszcze raz. Muszę sie spieszyć...</p>
-                                <div class="flex justify-between items-center">
+                                <p class="mt-4 text-base text-gray-600 w-72">Ten blog jest inspirujący w świecie krajobrazów. Jest to tak istotna pozycja w pracy, że chyba na nowo zacznę czytać wszystko jeszcze raz.</p>
+                                <div class="flex justify-between items-center md:w-64">
                                     <div class="mt-4 flex items-center space-x-4 py-6">
                                     <div class="">
-                                        <img class="rounded-full" style="width: 100%; height: auto;" src="images/avat1.png" alt="" />
+                                        <img class="rounded-full" src="images/avat1.png" alt="avatar" style="width: 130px;"/>
                                     </div>
                                     <div class="text-sm font-semibold">Anna Santon • <span class="font-normal"> 5 minutes ago</span></div>
                                     </div>
@@ -299,12 +317,12 @@
                                 </div>
                                 </div>
                         </div>
-                    </div>                    
-                    <div class="bg-gray-200 my-2 xl:my-0 mx-4 sm:mx-0">
-                        <div class="px-1 pt-4 xl:w-96 mx-auto">
-                                <div class="w-10 h-10 mt-2 bg-gray-500 rounded-full flex items-center justify-center font-bold text-white" style="font-size: 10px">LOGO</div>
-                                <div class="mt-1">
-                                <h1 class="text-lg text-gray-700 font-semibold hover:underline cursor-pointer mt-3">Recenzja...</h1>
+                    </div>
+                    <div class="bg-white my-2 xl:my-0 mx-1 w-96 md:w-fit">
+                        <div class="px-1 pt-4">
+                            <div class="w-8 h-8 mt-2 bg-gray-400 rounded-full flex items-center justify-center font-bold text-white" style="font-size: 8px">LOGO</div>                              
+                            <div class="mt-1">
+                                <h2 class="text-lg text-gray-700 font-semibold hover:underline cursor-pointer mt-3">Recenzja...</h2>
                                 <div class="flex mt-2">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
                                     <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
@@ -319,11 +337,11 @@
                                     <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                                     </svg>
                                 </div>
-                                <p class="mt-4 text-lg text-gray-600 w-72">Możliwość przeczytania tego reportażu jest wartościowa. Jest to tak istotna pozycja, że chyba na nowo zacznę czytać wszystko. Będzie to niebawem.</p>
-                                <div class="flex justify-between items-center">
+                                <p class="mt-4 text-base text-gray-600 w-72">Możliwość przeczytania tego reportażu jest wartościowa. Jest to tak istotna pozycja, że chyba na nowo zacznę czytać wszystko. Będzie to niebawem.</p>
+                                <div class="flex justify-between items-center md:w-64">
                                     <div class="mt-4 flex items-center space-x-4 py-6">
                                     <div class="">
-                                        <img class="rounded-full" style="width: 100%; height: auto;" src="images/avat3.png" alt="" />
+                                        <img class="rounded-full" src="images/avat3.png" alt="avatar" style="width: 136px;" />
                                     </div>
                                     <div class="text-sm font-semibold">John Bolder • <span class="font-normal"> 25 minutes ago</span></div>
                                     </div>
@@ -332,11 +350,11 @@
                                 </div>
                         </div>
                     </div>
-                    <div class="bg-gray-200 my-2 xl:my-0 mx-4 sm:mx-0">
-                        <div class="px-1 pt-4 xl:w-96 mx-auto">
-                                <div class="w-10 h-10 mt-2 bg-gray-500 rounded-full flex items-center justify-center font-bold text-white" style="font-size: 10px">LOGO</div>
+                    <div class="bg-white my-2 xl:my-0 mx-1 w-96 md:w-fit">
+                        <div class="px-1 pt-4">
+                                <div class="w-8 h-8 mt-2 bg-gray-400 rounded-full flex items-center justify-center font-bold text-white" style="font-size: 8px">LOGO</div>
                                 <div class="mt-1">
-                                <h1 class="text-lg text-gray-700 font-semibold hover:underline cursor-pointer mt-3">Recenzja...</h1>
+                                <h2 class="text-lg text-gray-700 font-semibold hover:underline cursor-pointer mt-3">Recenzja...</h2>
                                 <div class="flex mt-2">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
                                     <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
@@ -351,39 +369,104 @@
                                     <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                                     </svg>
                                 </div>
-                                <p class="mt-4 text-lg text-gray-600 w-72">Całą treść jest mi bardzo bliska, gdyż przez moje własne lata przekonałam się na własnej skórze jak mocno odmowa robienia czegoś nie popłaca…</p>
-                                <div class="flex justify-between items-center">
+                                <p class="mt-4 text-base text-gray-600 w-72">Niedawno chyba widziałam. Cała treść jest mi bardzo bliska, i przekonałam się już, że warto wracać w te i podobne miejsca.</p>
+                                <div class="flex justify-between items-center md:w-64">
                                     <div class="mt-4 flex items-center space-x-4 py-6">
                                     <div class="">
-                                        <img class="rounded-full" style="width: 100%; height: auto;" src="images/avat2.png" alt="" />
+                                        <img class="rounded-full" src="images/avat2.png" alt="avatar"/>
                                     </div>
-                                    <div class="text-sm font-semibold">Jesica Woltan • <span class="font-normal"> 1 day ago</span></div>
+                                    <div class="text-sm font-semibold">Jesica Woltan • <span class="font-normal"> 2 days ago</span></div>
+                                    </div>
+                                    <div class="ml-1 p-4 bg-orange-600 rounded-full h-4 w-4 flex items-center justify-center text-lg text-white mt-4 shadow-lg cursor-pointer">+</div>
+                                </div>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="bg-white my-2 xl:my-0 mx-1 w-96 md:w-fit">
+                        <div class="px-1 pt-4">
+                                <div class="w-8 h-8 mt-2 bg-gray-400 rounded-full flex items-center justify-center font-bold text-white" style="font-size: 8px">LOGO</div>
+                                <div class="mt-1">
+                                <h2 class="text-lg text-gray-700 font-semibold hover:underline cursor-pointer mt-3">Recenzja...</h2>
+                                <div class="flex mt-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                    </svg>
+                                </div>
+                                <p class="mt-4 text-base text-gray-600 w-72">Znajome obrazki z tego typu blogów. Przedstawiają oryginalne widoki krajobrazów. Można wracać bez nudy do oglądania…</p>
+                                <div class="flex justify-between items-center md:w-64">
+                                    <div class="mt-4 flex items-center space-x-4 py-6">
+                                    <div class="">
+                                        <img class="rounded-full" src="images/avat5.webp" alt="avatar" style="width: 136px;" />
+                                    </div>
+                                    <div class="text-sm font-semibold">Monica Lenoth • <span class="font-normal"> 4 days ago</span></div>
+                                    </div>
+                                    <div class="ml-1 p-4 bg-orange-600 rounded-full h-4 w-4 flex items-center justify-center text-lg text-white mt-4 shadow-lg cursor-pointer">+</div>
+                                </div>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="bg-white my-2 2xl:my-0 mx-1 w-96 md:w-fit">
+                        <div class="px-1 pt-4">
+                                <div class="w-8 h-8 mt-2 bg-gray-400 rounded-full flex items-center justify-center font-bold text-white" style="font-size: 8px">LOGO</div>
+                                <div class="mt-1">
+                                <h2 class="text-lg text-gray-700 font-semibold hover:underline cursor-pointer mt-3">Recenzja</h2>
+                                <div class="flex mt-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                    </svg>
+                                </div>
+                                <p class="mt-4 text-base text-gray-600 w-72">Dobra prezentacja krajobrazów. Propozycja na powtórne nań spojrzenie. Trzeba przeczytać wszystko jeszcze raz.</p>
+                                <div class="flex justify-between items-center md:w-64">
+                                    <div class="mt-4 flex items-center space-x-4 py-6">
+                                    <div class="">
+                                        <img class="rounded-full" src="images/avat6.webp" alt="avatar" style="width: 136px;" />
+                                    </div>
+                                    <div class="text-sm font-semibold">Catherine Wells • <span class="font-normal"> 10 days ago</span></div>
                                     </div>
                                     <div class="ml-1 p-4 bg-orange-600 rounded-full h-4 w-4 flex items-center justify-center text-lg text-white mt-4 shadow-lg cursor-pointer">+</div>
                                 </div>
                                 </div>
                         </div>
                     </div>                    
+                                         
                 </div>  
             </div>
         </section>
 
         <!-- NEWS --> 
-        <section data-section="offer" id="section4" class="anchor section_4 overflow-x-hidden bg-gradient-to-r from-orange-500 to-orange-600">    
+        <section data-section="offer" id="section4" class="overflow-x-hidden bg-gradient-to-r from-orange-500 to-orange-600">    
             <div class="bg-zinc-200">
-                <p class="text-center text-lg font-semibold py-5 md:py-8 uppercase">newsletter</p>
+                <p class="text-center text-xl font-semibold py-5 md:py-8 uppercase">newsletter</p>
             </div>
             <div class="container py-6 md:py-32 relative">
                 <div class="flex flex-col md:flex-row items-center justify-between text-white">
-                    <div class="w-80 md:w-1/2 lg:w-5/12 xl:w-4/12 pl-4 md:pl-0">
-                        <h3 class="text-2xl md:text-4xl mb-2">
+                    <div class="w-80 md:w-1/2 lg:w-5/12 pl-4 2xl:pl-0">
+                        <h3 class="text-2xl md:text-3xl mb-2 xl:text-4xl 2xl:text-5xl">
                             Zostań z nami, zapisz się.
                         </h3>
-                        <p class="w-64 mt-3 sm:mt-5 mb-4 lg:mb-0 text-base xl:text-2xl">
+                        <p class="w-64 mt-3 sm:mt-5 mb-4 lg:mb-0 text-base md:w-10/12 lg:text-xl xl:text-2xl xl:w-11/12">
                             Dołącz do naszego newslettera, aby otrzymywać najważniejsze informacje, zanim ktokolwiek inny.
                         </p>
                     </div>    
-                    <div class="w-80 md:w-1/2 lg:w-8/12 xl:w-1/2">
+                    <div class="w-80 md:w-1/2 lg:w-8/12 xl:w-1/2 lg:pr-4 2xl:pr-0">
                         <form class="h-full w-full flex flex-col lg:flex-row justify-end" 
                                 name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field">
                             <input type="hidden" name="newsletter" value="newsletter">
@@ -401,38 +484,132 @@
         </section>
         
         <div class="bg-zinc-200">
-            <p class="text-center text-lg font-semibold py-5 md:py-8 uppercase">kontakt</p>
+            <p class="text-center text-xl font-semibold py-5 md:py-8 uppercase">kontakt</p>
         </div>
-        <footer class="footer bg-gray-800 border-t-2" id="section5">
+      
+        <div class="bg-[#010544]">
             
-            <div class="container py-6 md:pb-0 px-4 md:px-0">
-                <div class="text-gray-400 text-base pb-6 md:pb-24" style="line-height: 36px;">
-                    Agencja Reklamowa: <span class="text-orange-600" href="">CodeBurn sc.</span><br \>
-                    Adres firmy: Warszawa ul. Szaserów 44<br \>
-                    telefon: 000 000 111 
-                </div>
-            </div>
-                <div class="bg-gray-700">
-                    <div class="container flex flex-wrap justify-between items-center text-center py-2 px-4 md:px-0">
-                        <div class="footer-copyright text-gray-400 text-sm mb-6 md:mb-0 text-left">
-                            2023 (c) Nasza stronka BC. All rights reserved <a class="text-orange-600" href="">Privacy policy</a>
+            <footer id="section5" class="w-full text-gray-700">
+                <div class="container flex flex-wrap-reverse justify-between items-center md:py-10 mx-auto">
+                    <div class="px-4 2xl:px-0">
+                        <a href="index.html" class="">                           
+                            <img src="images/logo_web.webp" width="75" height="55" class="mlMobile">
+                        </a>
+                        <p class="mt-2 text-sm text-gray-500">Projekty, Kodowanie i Wdrażanie!</p>
+                        <div class="mt-4 flex md:block">
+                                <div class="w-6 h-6 mr-4 md:mr-0">
+                                    <a class="text-gray-500 cursor-pointer hover:text-gray-400">
+                                        <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            class="w-5 h-5" viewBox="0 0 24 24">
+                                            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                                        </svg>
+                                    </a>
+                                </div>
+                                <div class="w-6 h-6 mr-4 md:mr-0">
+                                    <a class="text-gray-500 cursor-pointer hover:text-gray-400">
+                                        <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            class="w-5 h-5" viewBox="0 0 24 24">
+                                            <path
+                                                d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z">
+                                            </path>
+                                        </svg>
+                                    </a>
+                                </div>
+                                <div class="w-6 h-6 mr-4 md:mr-0">
+                                    <a class="text-gray-500 cursor-pointer hover:text-gray-400">
+                                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                                            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                                            <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+                                        </svg>
+                                    </a>
+                                </div>
+                                <div class="w-6 h-6">
+                                    <a class="text-gray-500 cursor-pointer hover:text-gray-400">
+                                        <svg fill="currentColor" stroke="currentColor" stroke-linecap="round"
+                                            stroke-linejoin="round" stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
+                                            <path stroke="none"
+                                                d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z">
+                                            </path>
+                                            <circle cx="4" cy="4" r="2" stroke="none"></circle>
+                                        </svg>
+                                    </a>
+                                </div>
                         </div>
-                        <div class="footer-social center-content text-white">
-                            <a class="mr-1 bg-gray-600 rounded-lg inline-block w-6 h-6" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="mx-1 bg-gray-600 rounded-lg inline-block w-6 h-6" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="mx-1 bg-gray-600 rounded-lg inline-block w-6 h-6" href=""><i class="fab fa-google-plus-g"></i></a>
-                            <a class="mx-1 bg-gray-600 rounded-lg inline-block w-6 h-6" href=""><i class="fab fa-linkedin-in"></i></a>                    
+                    </div>
+                    <div class="flex flex-wrap mt-10 text-lg">
+                        <div class="w-full px-4 xl:px-0 sm:w-1/2 md:w-40 lg:w-60 flexTwoCol480">
+                            <h2 class="mb-3 text-base font-medium text-white uppercase">O nas</h2>
+                            <nav class="mb-10 list-none">
+                                <li class="mt-3">
+                                    <a class="text-gray-500 cursor-pointer hover:text-gray-400">Firma</a>
+                                </li>
+                                <li class="mt-3">
+                                    <a class="text-gray-500 cursor-pointer hover:text-gray-400">Praca</a>
+                                </li>
+                                <li class="mt-3">
+                                    <a class="text-gray-500 cursor-pointer hover:text-gray-400">Blog</a>
+                                </li>
+                            </nav>
+                        </div>
+                        <div class="w-full px-4 xl:px-0 sm:w-1/2 md:w-40 lg:w-60 flexTwoCol480">
+                            <h2 class="mb-3 text-base font-medium text-white uppercase">Wsparcie</h2>
+                            <nav class="mb-10 list-none">
+                                <li class="mt-3">
+                                    <a class="text-gray-500 cursor-pointer hover:text-gray-400">Kontakt</a>
+                                </li>
+                                <li class="mt-3">
+                                    <a class="text-gray-500 cursor-pointer hover:text-gray-400">Pomoc</a>
+                                </li>
+                                <li class="mt-3">
+                                    <a class="text-gray-500 cursor-pointer hover:text-gray-400">Aktualności</a>
+                                </li>
+                            </nav>
+                        </div>
+                        <div class="w-full px-4 xl:px-0 sm:w-1/2 md:w-40 lg:w-60 flexTwoCol480">
+                            <h2 class="mb-3 text-base font-medium text-white uppercase">Platforma
+                            </h2>
+                            <nav class="mb-10 list-none">
+                                <li class="mt-3">
+                                    <a class="text-gray-500 cursor-pointer hover:text-gray-400">Warunki &amp; Prywatność</a>
+                                </li>
+                                <li class="mt-3">
+                                    <a class="text-gray-500 cursor-pointer hover:text-gray-400">Cennik</a>
+                                </li>
+                                <li class="mt-3">
+                                    <a class="text-gray-500 cursor-pointer hover:text-gray-400">FAQ</a>
+                                </li>
+                            </nav>
+                        </div>
+                        <div class="w-full px-4 xl:px-0 sm:w-1/2 md:w-40 lg:w-60 flexTwoCol480">
+                            <h2 class="mb-3 text-base font-medium text-white uppercase">Kontakt</h2>
+                            <nav class="mb-10 list-none">
+                                <li class="mt-3">
+                                    <a class="text-gray-500 cursor-pointer hover:text-gray-400">Wyślij wiadomość</a>
+                                </li>
+                                <li class="mt-3">
+                                    <a class="text-gray-500 cursor-pointer hover:text-gray-400">Pytania</a>
+                                </li>
+                                <li class="mt-3">
+                                    <a class="text-gray-500 cursor-pointer hover:text-gray-400">123-456-789</a>
+                                </li>
+                            </nav>
                         </div>
                     </div>
                 </div>
-        </footer>
-    
-    
+                <div class="bg-zinc-200">
+                    <div class="container text-center py-2">
+                        <p class="text-sm text-gray-700">© 2023 BC All rights reserved </p>
+                    </div>
+                </div>
+            </footer>
+        
+        </div>
 
-    <script src="js/menuMobile.js"></script>
-    <script src="js/menusColor.js"></script>
-    <script src="js/menuScroll.js"></script>
-    <script src="js/to_top.js"></script>
+    
+    <script src="../dist/js/itemMenuColor.js"></script>
+    <script src="../dist/js/menuScroll.js"></script>
+    <script src="../dist/js/to_top.js"></script>
         
 </body>
 </html>
